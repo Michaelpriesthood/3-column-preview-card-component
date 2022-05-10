@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+
+:root {
+  --card-1-color: hsl(31, 77%, 52%);
+  --card-2-color: hsl(184, 100%, 22%);
+  --card-3-color: hsl(179, 100%, 13%);
+  --header-font: "Big Shoulders Display", cursive;
+  --content-font: "Lexend Deca", sans-serif;
+}
+
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: hsl(0, 0%, 95%);
+  font-family: var(--content-font);
+  line-height: 1.7;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  /* flex-direction: column; */
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 840px;
+  margin: 30px;
+}
+/* card general styles */
+.card {
+  min-height: 470px;
+  padding: 35px;
+}
+
+.card__header {
+  font-family: var(--header-font);
+  font-size: 2.3rem;
+  color: hsl(0, 0%, 95%);
+  text-transform: uppercase;
+  margin: 15px 0;
+}
+
+.card__content {
+  color: hsla(0, 0%, 100%, 0.75);
+}
+
+/* button styles */
+.card .btn {
+  background: hsl(0, 0%, 95%);
+  font-family: var(--content-font);
+  font-weight: bold;
+  border: none;
+  border-radius: 35px;
+  padding: 15px 30px;
+  margin-top: 80px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.card .btn:hover {
+  background: none;
+  border: 2px solid hsl(0, 0%, 95%);
+  color: hsla(0, 0%, 100%, 0.75);
+  transition: all 0.3s;
+}
+
+/* cards specific styles */
+.card--yellow {
+  background: var(--card-1-color);
+  border-radius: 10px 0 0 10px;
+}
+
+.card--yellow .btn {
+  color: var(--card-1-color);
+}
+
+.card--light-cyan {
+  background: var(--card-2-color);
+}
+
+.card--light-cyan .btn {
+  color: var(--card-2-color);
+}
+.card--dark-cyan {
+  background: var(--card-3-color);
+  border-radius: 0 10px 10px 0;
+}
+
+.card--dark-cyan .btn {
+  color: var(--card-3-color);
+}
+
+footer {
+  position: fixed;
+  bottom: 10px;
+  text-align: center;
+}
+
+/* Responsiveness */
+@media (max-width: 600px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card .btn {
+    background: none;
+    border: 2px solid hsl(0, 0%, 95%);
+    color: hsla(0, 0%, 100%, 0.75);
+  }
+
+  .card--yellow {
+    border-radius: 10px 10px 0 0;
+  }
+
+  .card--dark-cyan {
+    border-radius: 0 0 10px 10px;
+  }
+
+  footer {
+    display: none;
+  }
+}
